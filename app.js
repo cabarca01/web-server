@@ -10,10 +10,6 @@ var middleware = require('./middleware.js');
 app.use(middleware.logger); // Application level middleware
 
 // Routing
-app.get('/', function (req, res){
-    res.send('Welcome to express!')
-});
-
 app.get('/about', middleware.requireAuthentication, function (req, res){
     res.send('About Us!')
 });
